@@ -20,11 +20,15 @@ async function main() {
   // Wait for it to be mined.
   await txn.wait()
   console.log("Minted NFT #1")
+  let totalNFTs = await nftContract.getMintedNFTs();
+  console.log("Total NFTs :", totalNFTs)
 
   txn = await nftContract.makeAnEpicNFT()
   // Wait for it to be mined.
   await txn.wait()
   console.log("Minted NFT #2")
+  totalNFTs = await nftContract.getMintedNFTs();
+  console.log("Total NFTs :", totalNFTs)
 
 }
 
